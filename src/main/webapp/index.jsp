@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title> Car Booking website</title>
+  <title> Cab Booking website</title>
 </head>
 
 <body>
