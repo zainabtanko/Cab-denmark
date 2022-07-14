@@ -1,4 +1,4 @@
-FROM openjdk:8
-EXPOSE 8085
-ADD target/car-booking.webapp.war car-booking.webapp.war
-ENTRYPOINT ["java","-war","car-booking.webapp.war"]
+FROM tomcat
+ADD car-booking.webapp.war /usr/local/tomcat/webapps/
+CMD  ["catalina.sh","run"]
+EXPOSE 8080 
