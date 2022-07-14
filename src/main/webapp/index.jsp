@@ -25,7 +25,7 @@
         <input type="email" name="name" />
       </div>
       <div class="item">
-        <p>Phone</p>
+        <p>Phone-no_please </p>
         <input type="number" name="name" />
       </div>
       <div class="item">
