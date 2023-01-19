@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Get the current version number
+# Get the current version number test
 current_version=$(cat version)
 
 # Increment the patch version number
