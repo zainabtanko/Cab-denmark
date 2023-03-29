@@ -7,7 +7,7 @@ pipeline {
                 git 'https://github.com/ekka007/cab-booking-webapp_PROJECT.git'
             }
         }
-        stage('compile') {
+        stage('compiles') {
             steps {
                sh 'mvn compile' 
             }
