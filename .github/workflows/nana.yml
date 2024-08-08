@@ -32,12 +32,12 @@ on:
 
 env:
   AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: usmanrepo           # set this to your Amazon ECR repository name
-  ECS_SERVICE: usmanservice                 # set this to your Amazon ECS service name
-  ECS_CLUSTER: usmancluster                 # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: .aws/task-definition.json  # set this to the path to your Amazon ECS task definition
+  ECR_REPOSITORY: myrepo           # set this to your Amazon ECR repository name
+  ECS_SERVICE: yaksservice                 # set this to your Amazon ECS service name
+  ECS_CLUSTER: yaks                 # set this to your Amazon ECS cluster name
+  ECS_TASK_DEFINITION: .aws/sample-fargate.json  # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
-  CONTAINER_NAME: fargate-app           # set this to the name of the container in the
+  CONTAINER_NAME: yakscont           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
 
 permissions:
@@ -52,6 +52,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+    - name: Build with Maven
+      run: mvn -B package -Pprod --file pom.xml  
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
